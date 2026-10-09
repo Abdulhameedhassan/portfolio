@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  :root{--bg:#0d0f14;--card:#161a22;--line:#242a36;--text:#e9ecf1;--muted:#98a1b3;--accent:#4ade80}
+  *{box-sizing:border-box;margin:0}
+  body{font-family:system-ui,"Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+  .wrap{max-width:1100px;margin:auto;padding:0 20px}
+  header{padding:70px 0 40px}
+  header h1{font-size:clamp(2rem,6vw,3.4rem)}
+  .hero-inner{display:flex;align-items:center;gap:30px}
+  .hero-text{flex:1;min-width:0}
+  .avatar{width:170px;height:170px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--accent)}
+  @media(max-width:640px){.hero-inner{flex-direction:column;text-align:center}}
+  header .role{color:var(--accent);margin-top:6px}
+  header p{color:var(--muted);margin-top:14px;max-width:620px;font-size:1.1rem}
+  .totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:30px 0 50px}
+  .total{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .total b{font-size:2rem;color:var(--accent);display:block}
+  .total span{color:var(--muted);font-size:.9rem}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:28px}
+  .case .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+  .case .meta .cat{background:#1f2a24;color:var(--accent);padding:2px 10px;border-radius:99px}
+  .case h2{margin:10px 0 6px;font-size:1.4rem}
+  .case .challenge{color:var(--muted)}
+  .metrics{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+  .metric{border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:150px}
+  .metric b{font-size:1.6rem;color:var(--accent);display:block}
+  .metric small{color:var(--muted)}
+  .case ul{padding-inline-start:20px;margin:10px 0}
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+  .shots img{width:100%;border-radius:10px;border:1px solid var(--line);cursor:zoom-in}
+  .tools{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+  .tools span{font-size:.75rem;background:#222836;padding:3px 10px;border-radius:99px;color:var(--muted)}
+  footer{padding:50px 0;text-align:center;color:var(--muted)}
+  footer a{color:var(--accent)}
+  .socials{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+  .hero-text .socials{justify-content:flex-start;margin-top:18px}
+  @media(max-width:640px){.hero-text .socials{justify-content:center}}
+  .socials a{width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--muted);font-size:1.2rem;text-decoration:none;transition:.2s}
+  .socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+  #lb{position:fixed;inset:0;background:#000d;display:none;place-items:center;z-index:9}
+  #lb img{max-width:94vw;max-height:94vh;border-radius:8px}
+  .lang{position:fixed;top:16px;inset-inline-start:16px;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer;z-index:10}
+  .nav{display:flex;gap:10px;padding:20px 0 0;flex-wrap:wrap;justify-content:center}
+  .nav a{font-size:.85rem;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 18px;color:var(--muted);text-decoration:none}
+  .nav a:hover{color:var(--accent);border-color:var(--accent)}
+  .secttl{margin:10px 0 16px;font-size:1.4rem}
+  .soon{color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:18px 20px;margin-bottom:28px}
+</style>
+</head>
+<body>
+<button class="lang" id="langBtn">EN</button>
+<div class="wrap">
+  <nav class="nav" id="nav"></nav>
+  <header id="hero"></header>
+  <section class="totals" id="totals"></section>
+  <section id="seo"></section>
+  <section id="gtm"></section>
+  <section id="projects"></section>
+</div>
+<div id="lb" onclick="this.style.display='none'"><img></div>
+
+<script src="cases.js"></script>
+<script src="projects.js"></script>
+<script>
+let LANG = localStorage.getItem('lang') || 'ar';
+const P = window.PROFILE || {}, C = (window.CASES||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
+const J = (window.PROJECTS||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
+function render(){
+  const en = LANG === 'en';
+  document.documentElement.lang = en ? 'en' : 'ar';
+  document.documentElement.dir = en ? 'ltr' : 'rtl';
+  langBtn.textContent = en ? 'عربي' : 'EN';
+  const socials = P.contact ? `<div class="socials">` + [
+    P.contact.email?`<a href="mailto:${P.contact.email}" title="${P.contact.email}"><i class="fa-solid fa-envelope"></i></a>`:'',
+    ...((P.contact.phones||[]).map(ph=>`<a href="tel:+2${ph}" title="${ph}" dir="ltr"><i class="fa-solid fa-phone"></i></a>`)),
+    P.contact.whatsapp?`<a href="${P.contact.whatsapp}" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>`:'',
+    P.contact.linkedin?`<a href="${P.contact.linkedin}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>`:'',
+    P.contact.behance?`<a href="${P.contact.behance}" target="_blank" title="Behance"><i class="fa-brands fa-behance"></i></a>`:'',
+    P.contact.github?`<a href="${P.contact.github}" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>`:''
+  ].filter(Boolean).join('') + `</div>` : '';
+  hero.innerHTML = `<div class="hero-inner">${P.photo?`<img class="avatar" src="${P.photo}" alt="${en ? (P.name_en||P.name) : P.name}">`:''}<div class="hero-text"><h1>${en ? (P.name_en||P.name) : P.name}</h1><div class="role">${en ? (P.title_en||P.title||'') : (P.title||'')}</div><p>${en ? (P.pitch_en||P.pitch||'') : (P.pitch||'')}</p>${socials}</div></div>`;
+  const L = en ? ['Case Studies','Categories','Tools','AI Projects'] : ['دراسات حالة','مجالات','أدوات','مشاريع AI'];
+  totals.innerHTML = [
+    [C.length,L[0]],
+    [new Set(C.map(c=>c.category)).size,L[1]],
+    [new Set(C.flatMap(c=>c.tools||[])).size,L[2]],
+    [J.length,L[3]]
+  ].map(([n,l])=>`<div class="total"><b>${n}</b><span>${l}</span></div>`).join('');
+  nav.innerHTML = [
+    ['#seo', en ? 'SEO' : 'SEO'],
+    ['#gtm', en ? 'GTM' : 'GTM']
+  ].map(([h,t])=>`<a href="${h}">${t}</a>`).join('');
+  const caseCard = c=>`
+    <article class="case">
+      <div class="meta"><span class="cat">${c.category}</span><span>${en ? (c.client_en||c.client) : c.client}</span><span>${c.period}</span></div>
+      <h2>${en ? (c.challenge_en||c.challenge) : c.challenge}</h2>
+      <div class="metrics">${(c.metrics||[]).map(m=>`<div class="metric"><b>${m.value}</b><small>${en ? (m.label_en||m.label) : m.label}${m.from?` · ${m.from} → ${m.to}`:''}</small></div>`).join('')}</div>
+      <ul>${((en ? (c.actions_en||c.actions) : c.actions)||[]).map(a=>`<li>${a}</li>`).join('')}</ul>
+      <div class="shots">${(c.screenshots||[]).map(s=>`<img src="${s}" loading="lazy" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
+      <div class="tools">${(c.tools||[]).map(t=>`<span>${t}</span>`).join('')}</div>
+    </article>`;
+  const seoCases = C.filter(c=>c.category !== 'GTM'), gtmCases = C.filter(c=>c.category === 'GTM');
+  seo.innerHTML = `<h2 class="secttl">${en ? 'SEO Case Studies' : 'دراسات حالة SEO'}</h2>` + seoCases.map(caseCard).join('');
+  gtm.innerHTML = `<h2 class="secttl">${en ? 'GTM Case Studies' : 'دراسات حالة GTM'}</h2>` + (gtmCases.length ? gtmCases.map(caseCard).join('') : `<p class="soon">${en ? 'GTM case studies coming soon — Apollo / Smartlead / Clay outreach and pipeline work.' : 'دراسات GTM قريباً — شغل الـ outreach عبر Apollo وSmartlead وClay وبناء الـ pipeline.'}</p>`);
+  projects.innerHTML = J.length ? `<h2 style="margin:10px 0 16px;font-size:1.4rem">${en ? 'AI Agent Projects' : 'مشاريع AI Agents'}</h2>` + J.map(j=>`
+    <article class="case">
+      <h2>${en ? (j.name_en||j.name) : j.name}</h2>
+      <p class="challenge">${en ? (j.description_en||j.description) : j.description}</p>
+      <div class="shots">${(j.screenshots||[]).map(s=>`<img src="${s}" loading="lazy" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
+      ${(j.tools&&j.tools.length)?`<div class="tools">${j.tools.map(t=>`<span>${t}</span>`).join('')}</div>`:''}
+    </article>`).join('') : '';
+  localStorage.setItem('lang', LANG);
+}
+langBtn.onclick = ()=>{ LANG = LANG === 'ar' ? 'en' : 'ar'; render(); };
+render();
+</script>
+</body>
+</html>
