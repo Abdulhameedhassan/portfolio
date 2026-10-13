@@ -18,3 +18,4 @@
 - إنجليزي: Professional concise English, numbers first, no hype ("doubled" only if 2x).
 - كل case لازم فيه النسختين: `challenge` + `challenge_en`، و`actions` + `actions_en`، و`client` + `client_en`، وكل metric فيه `label` + `label_en`. لو الإنجليزي ناقص، ترجمه من العربي واسأل المستخدم للمراجعة.
 - الأقسام تلقائية حسب `category`: أي case بتصنيف `GTM` يظهر في قسم GTM، وغيره في قسم SEO.
+- سكشن الأدوات بيترسم من `window.TOOLS` في `cases.js` (اسم + وصف عربي/إنجليزي).
