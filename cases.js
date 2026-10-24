@@ -49,6 +49,7 @@ window.CASES = [
       "بناء قائمة بالفاوندرز (الشركة وعدد الموظفين ولينكد إن) من Apollo",
       "إثراء الإيميلات من Clay بالكريدت المجانية وRocketReach",
       "تحديد signal لكل شخص وكتابة رسالة مخصصة (relevance)",
+      "أتمتة كتابة الرسائل في workflow على n8n: Google Sheets → Loop → AI يكتب الرسالة → تحديث الشيت → Wait",
       "إرسال يدوي من الحساب الشخصي على لينكد إن",
       "الخطوة الجاية: cold emails للي مردش على لينكد إن"
     ],
@@ -57,6 +58,7 @@ window.CASES = [
       "Built a founder list (company, headcount, LinkedIn) from Apollo",
       "Enriched emails via Clay free credits and RocketReach",
       "Defined a per-person signal with a relevant personalized message",
+      "Automated message writing in an n8n workflow: Google Sheets → Loop → AI writes the message → update sheet → Wait",
       "Manual outreach from the personal LinkedIn account",
       "Next step: cold emails to LinkedIn non-responders"
     ],
@@ -64,8 +66,8 @@ window.CASES = [
       { label: "شركات في القائمة", label_en: "Companies listed", value: "180" },
       { label: "شركات بإيميلات", label_en: "Companies with emails", value: "~40" }
     ],
-    screenshots: ["images/gtm-zero-budget-prospect-list.png"],
-    tools: ["Apollo", "Clay", "RocketReach", "LinkedIn"],
+    screenshots: ["images/gtm-zero-budget-prospect-list.png", "images/gtm-n8n-outreach-workflow.png"],
+    tools: ["Apollo", "Clay", "RocketReach", "LinkedIn", "n8n"],
     date: "2026-10-13"
   },
   {
