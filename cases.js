@@ -107,22 +107,28 @@ window.CASES = [
     actions: [
       "إصلاحات تقنية وتعديلات في التصميم لتحسين تجربة المستخدم",
       "نشر مقالات وبناء باك لينك",
-      "تركيب سكيما بأنواع مختلفة بما يتناسب مع الموقع"
+      "تركيب سكيما بأنواع مختلفة بما يتناسب مع الموقع",
+      "توقف العمل على الموقع من 1 أكتوبر"
     ],
     actions_en: [
       "Technical fixes and design tweaks to improve user experience",
       "Publishing articles and building backlinks",
-      "Implementing multiple schema types suited to the website"
+      "Implementing multiple schema types suited to the website",
+      "Paused work on the website from October 1"
     ],
     metrics: [
-      { label: "إجمالي النقرات", label_en: "Total Clicks", value: "156", from: "0", to: "156" },
-      { label: "إجمالي الظهور", label_en: "Total Impressions", value: "5.56K", from: "0", to: "5.56K" },
-      { label: "متوسط CTR", label_en: "Avg CTR", value: "2.8%" },
-      { label: "متوسط الموضع", label_en: "Avg Position", value: "8.4" }
+      { label: "النقرات (أساس: 21 يوليو ← 10 أكتوبر)", label_en: "Clicks (baseline: Jul 21 → Oct 10)", value: "156", from: "0", to: "156" },
+      { label: "إجمالي الظهور (أساس)", label_en: "Total Impressions (baseline)", value: "5.56K", from: "0", to: "5.56K" },
+      { label: "متوسط CTR (أساس)", label_en: "Avg CTR (baseline)", value: "2.8%" },
+      { label: "متوسط الموضع (أساس)", label_en: "Avg Position (baseline)", value: "8.4" },
+      { label: "النقرات (متابعة: 23 أغسطس ← 21 نوفمبر)", label_en: "Clicks (follow-up: Aug 23 → Nov 21)", value: "200" },
+      { label: "إجمالي الظهور (متابعة)", label_en: "Total Impressions (follow-up)", value: "9.99K" },
+      { label: "متوسط CTR (متابعة)", label_en: "Avg CTR (follow-up)", value: "2%" },
+      { label: "متوسط الموضع (متابعة)", label_en: "Avg Position (follow-up)", value: "8.1" }
     ],
-    screenshots: ["images/caravan.png"],
+    screenshots: ["images/caravan.png", "images/caravan-gsc-follow-up.png"],
     tools: ["GSC"],
-    date: "2026-10-10"
+    date: "2026-11-21"
   },
   {
     id: "etqan-courses-lead-growth-2026-q3",
@@ -156,7 +162,7 @@ window.CASES = [
     client: "المنصور (موقع خدمات)",
     client_en: "Al-Mansour (services website)",
     category: "SEO",
-    period: "2026-06-30 → 2026-09-28",
+    period: "2026-06-30 → 2026-11-21",
     challenge: "موقع خدمات يعاني من مشاكل تقنية وترافيك أورجانيك ضعيف.",
     challenge_en: "Services website with technical issues and weak organic traffic.",
     actions: [
@@ -176,40 +182,50 @@ window.CASES = [
       "Designed CTA sections in pages and articles to convert visits into inquiries"
     ],
     metrics: [
-      { label: "إجمالي النقرات", label_en: "Total Clicks", value: "1.1K" },
-      { label: "إجمالي الظهور", label_en: "Total Impressions", value: "62.8K" },
-      { label: "متوسط CTR", label_en: "Avg CTR", value: "1.7%" },
-      { label: "متوسط الموضع", label_en: "Avg Position", value: "7.2" }
+      { label: "النقرات (أساس: 30 يونيو ← 28 سبتمبر)", label_en: "Clicks (baseline: Jun 30 → Sep 28)", value: "1.1K" },
+      { label: "إجمالي الظهور (أساس)", label_en: "Total Impressions (baseline)", value: "62.8K" },
+      { label: "متوسط CTR (أساس)", label_en: "Avg CTR (baseline)", value: "1.7%" },
+      { label: "متوسط الموضع (أساس)", label_en: "Avg Position (baseline)", value: "7.2" },
+      { label: "النقرات (متابعة: 23 أغسطس ← 21 نوفمبر)", label_en: "Clicks (follow-up: Aug 23 → Nov 21)", value: "2.03K" },
+      { label: "إجمالي الظهور (متابعة)", label_en: "Total Impressions (follow-up)", value: "125K" },
+      { label: "متوسط CTR (متابعة)", label_en: "Avg CTR (follow-up)", value: "1.6%" },
+      { label: "متوسط الموضع (متابعة)", label_en: "Avg Position (follow-up)", value: "7" }
     ],
-    screenshots: ["images/client-gsc-clicks.png", "images/mansor-pagespeed-mobile-1.png", "images/mansor-pagespeed-mobile-2.png", "images/mansor-crawl-robotstxt-fix.png", "images/mansor-crawl-duplicate-code-fix.png"],
+    screenshots: ["images/client-gsc-clicks.png", "images/mansor-pagespeed-mobile-1.png", "images/mansor-pagespeed-mobile-2.png", "images/mansor-crawl-robotstxt-fix.png", "images/mansor-crawl-duplicate-code-fix.png", "images/mansor-gsc-follow-up.png"],
     tools: ["GSC", "PageSpeed Insights", "Screaming Frog"],
-    date: "2026-09-28"
+    date: "2026-11-21"
   },
   {
     id: "certified-translation-gsc-baseline-2026-q3",
     client: "موقع ترجمة معتمدة (سري)",
     client_en: "Certified translation website (confidential)",
     category: "SEO",
-    period: "2026-06-30 → 2026-09-28",
-    challenge: "موقع ترجمة معتمدة تراجعت إحصائياته آخر 3 شهور، والشغل جاري حالياً على التحسين.",
-    challenge_en: "Certified translation website with declining stats over the last 3 months; optimization work is currently in progress.",
+    period: "2026-06-30 → 2026-11-21",
+    challenge: "موقع ترجمة معتمدة تراجعت إحصائياته، والشغل جاري على التحسين والمتابعة الدورية.",
+    challenge_en: "Certified translation website with declining stats; optimization and regular monitoring are in progress.",
     actions: [
       "إصلاح المشاكل التقنية لتحسين الفهرسة والزحف",
-      "تحسين المحتوى وصفحات الخدمات لرفع الصلة والترتيب"
+      "تحسين المحتوى وصفحات الخدمات لرفع الصلة والترتيب",
+      "متابعة الأداء في GSC بعد التحسين حتى 21 نوفمبر"
     ],
     actions_en: [
       "Fixing technical issues to improve crawlability and indexation",
-      "Improving content and service pages to lift relevance and rankings"
+      "Improving content and service pages to lift relevance and rankings",
+      "Monitoring performance in GSC after optimization through November 21"
     ],
     metrics: [
-      { label: "إجمالي النقرات (قبل)", label_en: "Total Clicks (before)", value: "601" },
-      { label: "إجمالي الظهور (قبل)", label_en: "Total Impressions (before)", value: "339K" },
-      { label: "متوسط CTR (قبل)", label_en: "Avg CTR (before)", value: "0.2%" },
-      { label: "متوسط الموضع (قبل)", label_en: "Avg Position (before)", value: "8.1" }
+      { label: "إجمالي النقرات (أساس: 30 يونيو ← 28 سبتمبر)", label_en: "Total Clicks (baseline: Jun 30 → Sep 28)", value: "601" },
+      { label: "إجمالي الظهور (أساس)", label_en: "Total Impressions (baseline)", value: "339K" },
+      { label: "متوسط CTR (أساس)", label_en: "Avg CTR (baseline)", value: "0.2%" },
+      { label: "متوسط الموضع (أساس)", label_en: "Avg Position (baseline)", value: "8.1" },
+      { label: "النقرات (متابعة: 23 أغسطس ← 21 نوفمبر)", label_en: "Clicks (follow-up: Aug 23 → Nov 21)", value: "519" },
+      { label: "إجمالي الظهور (متابعة)", label_en: "Total Impressions (follow-up)", value: "162K" },
+      { label: "متوسط CTR (متابعة)", label_en: "Avg CTR (follow-up)", value: "0.3%" },
+      { label: "متوسط الموضع (متابعة)", label_en: "Avg Position (follow-up)", value: "9.6" }
     ],
-    screenshots: ["images/translation-gsc-baseline.png"],
+    screenshots: ["images/translation-gsc-baseline.png", "images/translation-gsc-follow-up.png"],
     tools: ["GSC"],
-    date: "2026-09-28"
+    date: "2026-11-21"
   },
   {
     id: "google-ads-first-campaign-setup-2026-q4",
