@@ -115,7 +115,7 @@ function render(){
       <h2>${en ? (c.challenge_en||c.challenge) : c.challenge}</h2>
       <div class="metrics">${(c.metrics||[]).map(m=>`<div class="metric"><b>${m.value}</b><small>${en ? (m.label_en||m.label) : m.label}${m.from?` · ${m.from} → ${m.to}`:''}</small></div>`).join('')}</div>
       <ul>${((en ? (c.actions_en||c.actions) : c.actions)||[]).map(a=>`<li>${a}</li>`).join('')}</ul>
-      <div class="shots">${(c.screenshots||[]).map(s=>`<img src="${s}" loading="lazy" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
+      <div class="shots">${(c.screenshots||[]).map(s=>`<img src="${s}" decoding="async" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
       <div class="tools">${(c.tools||[]).map(t=>`<span>${t}</span>`).join('')}</div>
     </article>`;
   const seoCases = C.filter(c=>c.category !== 'GTM'), gtmCases = C.filter(c=>c.category === 'GTM');
@@ -125,7 +125,7 @@ function render(){
     <article class="case">
       <h2>${en ? (j.name_en||j.name) : j.name}</h2>
       <p class="challenge">${en ? (j.description_en||j.description) : j.description}</p>
-      <div class="shots">${(j.screenshots||[]).map(s=>`<img src="${s}" loading="lazy" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
+      <div class="shots">${(j.screenshots||[]).map(s=>`<img src="${s}" decoding="async" onclick="lb.querySelector('img').src=this.src;lb.style.display='grid'">`).join('')}</div>
       ${(j.tools&&j.tools.length)?`<div class="tools">${j.tools.map(t=>`<span>${t}</span>`).join('')}</div>`:''}
     </article>`).join('') : '';
   localStorage.setItem('lang', LANG);
