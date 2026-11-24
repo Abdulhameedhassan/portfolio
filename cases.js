@@ -217,24 +217,37 @@ window.CASES = [
     client_en: "Certified translation website (confidential)",
     category: "Paid",
     period: "2026-10",
-    challenge: "إطلاق أول حملة Google Ads لعميل الترجمة موجهة لبروفايل جوجل بزنس بدل الموقع.",
-    challenge_en: "Launching the translation client's first Google Ads campaign directed at the Google Business Profile instead of the website.",
+    challenge: "إطلاق أول حملة Google Ads لعميل الترجمة على شبكات جوجل بالكامل باستخدام ميزات الذكاء الاصطناعي داخل المنصة.",
+    challenge_en: "Launching the translation client's first Google Ads campaign across all Google networks using AI features inside the platform.",
     actions: [
       "بحث كلمات بكلمة أساسية (ترجمة عقود تجارية معتمدة) عبر Keyword Planner",
-      "إنشاء حساب إعلاني جديد وأول حملة",
-      "توجيه الحملة لبروفايل جوجل بزنس بدل الموقع الإلكتروني",
-      "ضبط الفوترة بنظام الدفع عند الاستخدام"
+      "إنشاء حساب إعلاني جديد وأول حملة وضبط الفوترة بنظام الدفع عند الاستخدام",
+      "تفعيل جميع شبكات جوجل واستخدام ميزة الذكاء الاصطناعي في Google Ads",
+      "رصد التحويلات: كانت من زر الموقع فقط، ومفيش تتبع على المكالمات الهاتفية",
+      "إطلاق حملة ثانية مستقلة استهدفت المكالمات فقط",
+      "إيقاف الحملتين يوم 30 أكتوبر بناءً على طلب العميل"
     ],
     actions_en: [
       "Keyword research from a seed keyword (certified commercial contracts translation) via Keyword Planner",
-      "Created a new ads account and the first campaign",
-      "Directed the campaign at the Google Business Profile instead of the website",
-      "Set up manual-payments billing"
+      "Created a new ads account and the first campaign with manual-payments billing",
+      "Enabled all Google networks and used AI features inside Google Ads",
+      "Tracked conversions: they came from the website button only, with no call tracking in place",
+      "Launched a second campaign targeting calls only",
+      "Paused both campaigns on October 30 at the client's request"
     ],
-    metrics: [],
-    screenshots: ["images/ads-keyword-planner.png", "images/ads-account-setup.png"],
-    tools: ["Google Ads"],
-    date: "2026-10-03"
+    metrics: [
+      { label: "نقرات الحملة الرئيسية (كل الشبكات + AI)", label_en: "Main campaign clicks (all networks + AI)", value: "5.52K" },
+      { label: "ظهور الحملة الرئيسية", label_en: "Main campaign impressions", value: "64.7K" },
+      { label: "متوسط CPC - الحملة الرئيسية", label_en: "Avg CPC - main campaign", value: "£0.36" },
+      { label: "تكلفة الحملة الرئيسية", label_en: "Main campaign cost", value: "£2.01K" },
+      { label: "نقرات حملة المكالمات", label_en: "Call campaign clicks", value: "65" },
+      { label: "ظهور حملة المكالمات", label_en: "Call campaign impressions", value: "1.75K" },
+      { label: "متوسط CPC - حملة المكالمات", label_en: "Avg CPC - call campaign", value: "£3.51" },
+      { label: "تكلفة حملة المكالمات", label_en: "Call campaign cost", value: "£228" }
+    ],
+    screenshots: ["images/ads-keyword-planner.png", "images/ads-account-setup.png", "images/ads-all-networks-results.png", "images/ads-calls-campaign-results.png"],
+    tools: ["Google Ads", "Keyword Planner"],
+    date: "2026-10-30"
   },
   // مثال ثنائي اللغة للشكل اللي الـ agent هيكتبه
   // {
