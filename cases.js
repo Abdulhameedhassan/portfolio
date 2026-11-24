@@ -10,12 +10,14 @@ window.PROFILE = {
   services: [
     { label: "On-Page SEO", label_en: "On-Page SEO", desc: "ووردبريس والبرمجة الخاصة (Next.js / PHP / HTML): المحتوى والعناوين والربط الداخلي", desc_en: "WordPress & custom-coded sites (Next.js / PHP / HTML): content, titles, and internal linking" },
     { label: "Off-Page SEO", label_en: "Off-Page SEO", desc: "ووردبريس والبرمجة الخاصة: بناء باك لينك وإشارات الثقة", desc_en: "WordPress & custom-coded sites: backlinks and authority signals" },
-    { label: "Technical SEO", label_en: "Technical SEO", desc: "ووردبريس فقط: الفهرسة والسرعة والسكيما وإصلاح الأخطاء", desc_en: "WordPress only: indexing, speed, schema, and issue fixes" }
+    { label: "Technical SEO", label_en: "Technical SEO", desc: "ووردبريس فقط: الفهرسة والسرعة والسكيما وإصلاح الأخطاء", desc_en: "WordPress only: indexing, speed, schema, and issue fixes" },
+    { label: "E-commerce SEO", label_en: "E-commerce SEO", desc: "زد وسلة وشوبيفاي وإيزي أوردر: تحسين الصفحات وتقليل الارتداد واستعادة السلات المتروكة", desc_en: "Zid, Salla, Shopify, and Easy Order: page optimization, lower bounce rate, and cart recovery" }
   ],
   contact: {
     email: "abdu.abdu3@gmail.com",
     phones: ["01010296789", "01119451767"],
     whatsapp: "https://wa.me/201119451767",
+    whatsapp_business: "https://wa.me/201010296789",
     linkedin: "https://www.linkedin.com/in/abdulhameed-hassan-4688ab135",
     behance: "https://www.behance.net/abdulhahassan1",
     github: "https://github.com/Abdulhameedhassan"
@@ -36,6 +38,30 @@ window.TOOLS = [
 ];
 
 window.CASES = [
+  {
+    id: "zid-ecommerce-ga4-bounce-baseline-2026-q4",
+    client: "متجر إلكتروني على زد (سري)",
+    client_en: "E-commerce store on Zid (confidential)",
+    category: "SEO",
+    period: "2026-11",
+    challenge: "متجر على زد يعاني من معدل ارتداد مرتفع (70.4%) وسلات متروكة — التشخيص جاري في GA4 قبل التحسين.",
+    challenge_en: "Zid store with a high bounce rate (70.4%) and abandoned carts — GA4 diagnosis in progress before optimization.",
+    actions: [
+      "رصد مؤشرات GA4 (المشاهدات والمستخدمون النشطون والأحداث ومعدل الارتداد)"
+    ],
+    actions_en: [
+      "Monitoring GA4 metrics (views, active users, events, and bounce rate)"
+    ],
+    metrics: [
+      { label: "مشاهدات (Views)", label_en: "Views", value: "3.6K" },
+      { label: "مستخدمون نشطون", label_en: "Active Users", value: "2.8K" },
+      { label: "عدد الأحداث", label_en: "Event Count", value: "13K" },
+      { label: "معدل الارتداد (أساس)", label_en: "Bounce Rate (baseline)", value: "70.4%" }
+    ],
+    screenshots: ["images/zid-ga4-bounce-rate.png"],
+    tools: ["GA4"],
+    date: "2026-11-24"
+  },
   {
     id: "gtm-zero-budget-uk-agencies-2026",
     client: "مشروع شخصي (بحث عن شغل SEO/GTM)",

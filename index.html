@@ -92,6 +92,7 @@ function render(){
     P.contact.email?`<a href="mailto:${P.contact.email}" title="${P.contact.email}"><i class="fa-solid fa-envelope"></i></a>`:'',
     ...((P.contact.phones||[]).map(ph=>`<a href="tel:+2${ph}" title="${ph}" dir="ltr"><i class="fa-solid fa-phone"></i></a>`)),
     P.contact.whatsapp?`<a href="${P.contact.whatsapp}" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>`:'',
+    P.contact.whatsapp_business?`<a href="${P.contact.whatsapp_business}" target="_blank" title="WhatsApp Business"><i class="fa-brands fa-whatsapp"></i></a>`:'',
     P.contact.linkedin?`<a href="${P.contact.linkedin}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>`:'',
     P.contact.behance?`<a href="${P.contact.behance}" target="_blank" title="Behance"><i class="fa-brands fa-behance"></i></a>`:'',
     P.contact.github?`<a href="${P.contact.github}" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>`:''
